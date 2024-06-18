@@ -20,7 +20,6 @@ function AuthForm({ type }: AuthFormProps) {
     const router = useRouter();
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-
     const formSchema = authFormSchema(type);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -37,10 +36,9 @@ function AuthForm({ type }: AuthFormProps) {
         try {
             if (type === 'sign-up') {
                 // Sign up with Appwrite
-                // Create Plaid Link token
-                // console.log(values)
-
                 const newUser = await signUp(data);
+                setUser(newUser);
+                // todo: Create Plaid Link token
             }
 
             if (type === 'sign-in') {
@@ -66,7 +64,7 @@ function AuthForm({ type }: AuthFormProps) {
             <header className="flex flex-col gap-4 md:gap-8">
                 <Link href='/' className='cursor-pointer flex  items-center gap-1 padding-x-4'>
                     <Image src='/icons/logo.svg' width={34} height={34} alt='Logo' />
-                    <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Horizon</h1>
+                    <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1 ml-1'>MiBanq</h1>
                 </Link>
 
                 <div className="flex flex-col gap-1 md:gap-2">

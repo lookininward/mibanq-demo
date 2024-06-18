@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
+import Footer from './Footer';
 
 export default function Sidebar({ user }: SidebarProps) {
     const pathname = usePathname()
@@ -13,7 +14,7 @@ export default function Sidebar({ user }: SidebarProps) {
             <nav className='flex flex-col gap-4'>
                 <Link href='/' className='mb-12 cursor-pointer flex  items-center gap-2'>
                     <Image src='/icons/logo.svg' width={34} height={34} alt='Logo' className='size-[24px] max-xl:size-14' />
-                    <h1 className='sidebar-logo'>Horizon</h1>
+                    <h1 className='sidebar-logo'>MiBanq</h1>
                 </Link>
 
                 {sidebarLinks.map((item) => {
@@ -52,7 +53,7 @@ export default function Sidebar({ user }: SidebarProps) {
                 USER
             </nav>
 
-            FOOTER
+            <Footer user={user} />
         </section>
     )
 }

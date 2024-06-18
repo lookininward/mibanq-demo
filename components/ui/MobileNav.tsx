@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
-
+import Footer from "./Footer";
 
 export default function MobileNav({ user }: MobileNavProps) {
     const pathname = usePathname();
@@ -31,7 +31,7 @@ export default function MobileNav({ user }: MobileNavProps) {
                     <nav className='flex flex-col gap-4'>
                         <Link href='/' className='cursor-pointer flex  items-center gap-1 padding-x-4'>
                             <Image src='/icons/logo.svg' width={34} height={34} alt='Logo' />
-                            <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Horizon</h1>
+                            <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>MiBanq</h1>
                         </Link>
 
                         <div className="mobilenav-sheet">
@@ -74,7 +74,7 @@ export default function MobileNav({ user }: MobileNavProps) {
                                 </nav>
                             </SheetClose>
 
-                            FOOTER
+                            <Footer user={user} type="mobile" />
                         </div>
 
                     </nav>

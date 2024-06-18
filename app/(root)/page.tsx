@@ -1,24 +1,10 @@
 import HeaderBox from '@/components/ui/HeaderBox'
 import RightSidebar from '@/components/ui/RightSidebar'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
+import { getLoggedInUser } from '@/lib/actions/user.actions'
 
-const Home = () => {
-    const loggedIn = {
-        $id: '1',
-        firstName: 'Michael',
-        lastName: 'Xavier',
-        email: 'xyz@gmail.com',
-        avatar: '/images/avatar.jpg',
-        userId: 'lookininward',
-        dwollaCustomerUrl: 'lookininward',
-        dwollaCustomerId: 'lookininward',
-        address1: '123 Main St.',
-        city: 'Toronto',
-        state: 'Ontario',
-        postalCode: 'M5V 3A4',
-        dateOfBirth: '1990-01-01',
-        ssn: '1234',
-    }
+const Home = async () => {
+    const loggedIn = await getLoggedInUser();
 
     return (
         <section className='home'>
@@ -27,7 +13,7 @@ const Home = () => {
                     <HeaderBox
                         type='greeting'
                         title='Welcome'
-                        user={loggedIn?.firstName || 'Guest'}
+                        user={loggedIn?.name || 'Guest'}
                         subtext='Access and manage your account and transactions efficiently.'
                     />
                     <TotalBalanceBox
