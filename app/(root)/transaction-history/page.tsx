@@ -1,5 +1,5 @@
 import HeaderBox from '@/components/ui/HeaderBox';
-// import { Pagination } from '@/components/ui/Pagination';
+import { Pagination } from '@/components/ui/Pagination';
 import TransactionsTable from '@/components/ui/TransactionsTable';
 import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
@@ -62,7 +62,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
           />
           {totalPages > 1 && (
             <div className="my-4 w-full">
-              {/* <Pagination totalPages={totalPages} page={currentPage} /> */}
+              <Pagination totalPages={totalPages} page={currentPage} />
             </div>
           )}
         </section>
