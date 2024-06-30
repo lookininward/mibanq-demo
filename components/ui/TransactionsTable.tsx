@@ -51,7 +51,7 @@ function TransactionsTable({ transactions }: TransactionTableProps) {
                 <h1>{removeSpecialCharacters(transaction.name)}</h1>
               </TableCell>
               <TableCell className="px-2">
-                {isDebit ? `-$${amount}` : isCredit ? `$${amount}` : amount}
+                {isDebit ? `-$${amount}` : isCredit ? `${amount}` : amount}
               </TableCell>
               <TableCell className="px-2">
                 <CategoryBadge category={status} />
