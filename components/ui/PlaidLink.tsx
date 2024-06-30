@@ -21,11 +21,10 @@ function PlaidLink({
     }, [user])
 
     const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
-        const data = await exchangePublicToken({
+        await exchangePublicToken({
             publicToken: public_token,
             user
         });
-
         router.push('/');
     }, [user])
 
@@ -73,7 +72,7 @@ function PlaidLink({
                         width={24}
                         height={24}
                     />
-                    <p className="text-[16px] font-semibold text-black-2">
+                    <p className="text-[14px] font-semibold text-black-2">
                         Connect Bank
                     </p>
                 </Button>

@@ -1,8 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+
 import BankCard from "./BankCard";
-import { countTransactionCategories } from "@/lib/utils";
 import Category from "./Category";
+import PlaidLink from "./PlaidLink";
+import { countTransactionCategories } from "@/lib/utils";
 
 export default function RightSidebar({
     user,
@@ -12,47 +13,12 @@ export default function RightSidebar({
     const categories: CategoryCount[] = countTransactionCategories(transactions);
     return (
         <aside className="right-sidebar">
-            <section className="flex flex-col pb-8">
-                <div className="profile-banner">
-                    <div className="profile">
-                        <div className="profile-img">
-                            <span className="text-5xl font-bold text-blue-500">
-                                {user.firstName}
-                            </span>
-                        </div>
-
-                        <div className="profile-details">
-                            <h1 className="profile-name">
-                                {user.firstName} {user.lastName}
-                            </h1>
-                            <p className="profile-email">
-                                {user.email}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section className="banks">
-                <div className="flex w-full justify-between">
+                <div className="flex w-full justify-between items-center">
                     <h2 className="header-2">
-                        My Banks
+                        My Accounts
                     </h2>
-
-                    <Link
-                        href={`/banks`}
-                        className="flex items-center gap-2 cursor-pointer"
-                    >
-                        <Image
-                            src={'/icons/plus.svg'}
-                            alt={'Add Bank'}
-                            width={20}
-                            height={20}
-                        />
-                        <h2 className="text-14 font-semibold text-gray-600">
-                            Add Banks
-                        </h2>
-                    </Link>
+                    <PlaidLink user={user} />
                 </div>
 
                 {banks?.length > 0 && (

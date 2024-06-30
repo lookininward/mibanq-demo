@@ -13,8 +13,8 @@ export default function Sidebar({ user }: SidebarProps) {
     return (
         <section className='sidebar'>
             <nav className='flex flex-col gap-4'>
-                <Link href='/' className='mb-12 cursor-pointer flex  items-center gap-2'>
-                    <Image src='/icons/logo.svg' width={34} height={34} alt='Logo' className='size-[24px] max-xl:size-14' />
+                <Link href='/' className='mb-12 cursor-pointer flex items-center justify-center lg:justify-start gap-3'>
+                    <Image src='/icons/logo.svg' width={34} height={34} alt='Logo' className='size-[44px] max-xl:size-14' />
                     <h1 className='sidebar-logo'>MiBanq</h1>
                 </Link>
 
@@ -24,7 +24,8 @@ export default function Sidebar({ user }: SidebarProps) {
                         <Link
                             className={
                                 cn('sidebar-link', {
-                                    'bg-bank-gradient': isActive,
+                                    'sidebar-link--active': isActive,
+                                    'bg-teal-600': isActive,
                                 })
                             }
                             href={item.route}

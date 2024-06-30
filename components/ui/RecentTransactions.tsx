@@ -12,7 +12,7 @@ function RecentTransactions({
     page = 1,
 }: RecentTransactionsProps) {
     const rowsPerPage = 10;
-    const totalPages = Math.ceil(transactions.length / rowsPerPage);
+    const totalPages = Math.ceil(transactions?.length / rowsPerPage);
     const indexOfLastTransaction = page * rowsPerPage;
     const indexOfFirstTransaction = indexOfLastTransaction - rowsPerPage;
     const currentTransactions = transactions.slice(

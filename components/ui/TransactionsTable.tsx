@@ -51,17 +51,15 @@ function TransactionsTable({ transactions }: TransactionTableProps) {
                 <h1>{removeSpecialCharacters(transaction.name)}</h1>
               </TableCell>
               <TableCell className="px-2">
-                {isDebit ? `-$${amount}` : isCredit ? `${amount}` : amount}
+                {isDebit ? `-${amount}` : isCredit ? `${amount}` : amount}
               </TableCell>
               <TableCell className="px-2">
                 <CategoryBadge category={status} />
-                {status}
               </TableCell>
               <TableCell className="px-2">{formatDateTime(new Date(transaction.date)).dateTime}</TableCell>
-              <TableCell className="px-2 max-md:hidden">{transaction.paymentChannel}</TableCell>
+              <TableCell className="px-2 max-md:hidden capitalize">{transaction.paymentChannel}</TableCell>
               <TableCell className="px-2 max-md:hidden">
                 <CategoryBadge category={transaction.category} />
-                {transaction.category}
               </TableCell>
             </TableRow>
           )

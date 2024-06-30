@@ -12,7 +12,7 @@ export default function TotalBalanceBox({
                 <DonutChart accounts={accounts} />
             </div>
 
-            <div className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-4'>
                 <h2 className='header-2'>
                     Bank Accounts: {totalBanks}
                 </h2>

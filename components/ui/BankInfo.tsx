@@ -55,7 +55,7 @@ const BankInfo = ({ account, appwriteItemId, type }: BankInfoProps) => {
           </h2>
           {type === "full" && (
             <p
-              className={`text-12 rounded-full px-3 py-1 font-medium text-blue-700 ${colors.subText} ${colors.lightBg}`}
+              className={`capitalize text-12 rounded-full px-3 py-1 font-medium text-blue-700 ${colors.subText} ${colors.lightBg}`}
             >
               {account.subtype}
             </p>

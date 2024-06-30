@@ -12,7 +12,7 @@ const MyBanks = async () => {
       <div className="my-banks">
         <HeaderBox
           title="My Bank Accounts"
-          subtext="Access and manage your account and transactions efficiently."
+          subtext="Access and manage your accounts and transactions."
         />
         <div className="space-y-4">
           <h2 className="header-2">

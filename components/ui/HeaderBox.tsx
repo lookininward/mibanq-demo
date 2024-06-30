@@ -9,7 +9,7 @@ export default function HeaderBox({
             <h1 className='header-box-title'>
                 {title}
                 {type === 'greeting' && (
-                    <span className='text-bankGradient'>
+                    <span className='text-teal-700'>
                         &nbsp;{user}
                     </span>
                 )}
