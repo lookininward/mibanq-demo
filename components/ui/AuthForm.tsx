@@ -17,6 +17,16 @@ import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
 import PlaidLink from "./PlaidLink";
 
+const DEMO_USER = {
+    email: 'demo.user@mibanqdemo.com',
+    password: 'password',
+}
+
+const DEMO_USER_PLAID = {
+    username: 'user_good',
+    password: 'pass_good'
+}
+
 function AuthForm({ type }: AuthFormProps) {
     const router = useRouter();
     const [user, setUser] = useState(null);
@@ -26,8 +36,8 @@ function AuthForm({ type }: AuthFormProps) {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            email: "",
-            password: "",
+            email: DEMO_USER.email,
+            password: DEMO_USER.password,
         },
     })
 
